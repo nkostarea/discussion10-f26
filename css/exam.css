@@ -1,0 +1,88 @@
+/* Nancy Fu, Beck Mallwitz */
+
+/* You should change the container background to white, add a 5px gap, 
+and set the layout (justification and alignment) to match the screenshot below. 
+Every fourth image should span the entire row. Every even image should have a black border. 
+Your site should match the screenshot below (taken at 600px).
+ */
+.skip {
+    position: absolute;
+    top: -100px;
+}
+
+.skip:focus {
+    top: 0;
+}
+
+@media screen and (max-width: 450px) {
+    .gallery {
+    display: grid;
+    width: 85%;
+    margin: 0 auto;
+    background-color: #000000;
+    grid-template-columns: 24% 24% 24%;
+    justify-content: space-around;
+    align-items: center;
+    }
+
+    .gallery img {
+    width: 100%;
+    height: 100%;
+    border: dashed 4px orange;
+    box-sizing: border-box;
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .gallery {
+    display: grid;
+    width: 85%;
+    gap: 5px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    grid-template-columns: 24% 24% 24%;
+    justify-content: space-around;
+    align-items: start;
+    }
+
+    .gallery img {
+    width: 100%;
+    border: dashed 4px orange;
+    box-sizing: border-box;
+    }
+
+    .gallery img:nth-child(4), .gallery img:nth-child(8) {
+        grid-column: 1 / -1;
+    }
+
+    .gallery img:nth-child(even) {
+        border: dashed 4px #000000;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .gallery {
+    display: grid;
+    width: 85%;
+    gap: 5px;
+    margin: 0 auto;
+    background-color: orange;
+    grid-template-columns: 18% 18% 18% 18%;
+    justify-content: space-around;
+    align-items: start;
+    }
+
+    .gallery img {
+    width: 100%;
+    border: dashed 4px orange;
+    box-sizing: border-box;
+    }
+
+    .gallery img:nth-child(4), .gallery img:nth-child(8) {
+        grid-column: 1 / -1;
+    }
+
+    .gallery img:nth-child(even) {
+        border: dashed 4px #000000;
+    }
+}
